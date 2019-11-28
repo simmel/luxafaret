@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "luxafaret"
+version = "0.1.0"
+description = "🐍🐑🖍🎨🌈 Luxafåret - colourize your Luxafor flag from Python"
+authors = ["Simon Lundström <github-commits@soy.se>"]
+license = "ISC"
+
+[tool.poetry.dependencies]
+python = ">2.7, >3.6"
+hidapi = "~=0.7.99.post21"
+webcolors = "~=1.10"
+
+[tool.poetry.dev-dependencies]
+black = "~=19.10b0"
+
+[tool.poetry.scripts]
+luxafaret = 'luxafaret:main'
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
