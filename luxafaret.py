@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # pylint: disable=missing-docstring,c-extension-no-member
 # vim: set fileencoding=utf8 sw=2 et
 # Copyright 2017 Simon Lundström <simmel@soy.se>
