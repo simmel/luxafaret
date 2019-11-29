@@ -19,6 +19,7 @@ import argparse
 import sys
 import webcolors
 
+
 def main():
     parser = argparse.ArgumentParser(description="Change colour on the Luxafor flag")
     parser.add_argument("--red", dest="colour", action="store_const", const="red")
@@ -26,7 +27,9 @@ def main():
     parser.add_argument("--orange", dest="colour", action="store_const", const="orange")
     parser.add_argument("--blue", dest="colour", action="store_const", const="blue")
     parser.add_argument("--off", dest="colour", action="store_const", const="black")
-    parser.add_argument("--colour", "--color", help="Name of web colour to set the flag to")
+    parser.add_argument(
+        "--colour", "--color", help="Name of web colour to set the flag to"
+    )
     args = parser.parse_args()
 
     if len(sys.argv) == 1:
@@ -49,6 +52,7 @@ def main():
 
     d.write(cmd)
     d.close()
+
 
 if __name__ == "__main__":
     main()
