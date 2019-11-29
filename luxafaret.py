@@ -37,8 +37,8 @@ def main():
         parser.print_help()
         sys.exit(255)
 
-    d = hid.device()
-    d.open(0x04D8, 0xF372)
+    device = hid.device()
+    device.open(0x04D8, 0xF372)
     # For explaination, see https://pro.luxafor.com/faq/ , click API, download the
     # .zip and check the .xls in it.
     # Fade the change
@@ -51,8 +51,8 @@ def main():
     # Set fade time
     cmd += [16]
 
-    d.write(cmd)
-    d.close()
+    device.write(cmd)
+    device.close()
 
 
 if __name__ == "__main__":
