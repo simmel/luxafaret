@@ -14,9 +14,10 @@
 # OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 # PERFORMANCE OF THIS SOFTWARE.
 
-import hid
 import argparse
 import sys
+
+import hid
 import webcolors
 
 
