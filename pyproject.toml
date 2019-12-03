@@ -6,7 +6,6 @@ authors = ["Simon Lundström <github-commits@soy.se>"]
 license = "ISC"
 
 [tool.poetry.dependencies]
-python = ">2.7, >3.6"
 hidapi = "~=0.7.99.post21"
 webcolors = "~=1.10"
 
