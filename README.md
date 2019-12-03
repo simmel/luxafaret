@@ -25,8 +25,9 @@ $ luxafaret --colour green
 ## Installation
 
 ### Via pipx
+[Install pipx](https://github.com/pipxproject/pipx#user-content-install-pipx)
 ```
-$ pix install luxafaret
+$ pipx install luxafaret
 ```
 
 ### Via venv
