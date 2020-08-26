@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# pylint: disable=missing-docstring,c-extension-no-member
+# pylint: disable=missing-docstring,c-extension-no-member,invalid-name
 # vim: set fileencoding=utf8 sw=2 et
 # Copyright 2017 Simon Lundström <simmel@soy.se>
 
@@ -30,6 +30,13 @@ def main():
     parser.add_argument("--blue", dest="colour", action="store_const", const="blue")
     parser.add_argument("--off", dest="colour", action="store_const", const="black")
     parser.add_argument(
+        "-q",
+        "--quiet",
+        dest="quiet",
+        action="store_true",
+        help="Fail quietly if e.g. no flag is attached.",
+    )
+    parser.add_argument(
         "--colour", "--color", help="Name of web colour to set the flag to"
     )
     args = parser.parse_args()
@@ -39,7 +46,12 @@ def main():
         sys.exit(255)
 
     device = hid.device()
-    device.open(0x04D8, 0xF372)
+    try:
+        device.open(0x04D8, 0xF372)
+    except OSError as e:
+        if args.quiet:
+            return
+        raise e
     # For explaination, see https://pro.luxafor.com/faq/ , click API, download the
     # .zip and check the .xls in it.
     # Fade the change
